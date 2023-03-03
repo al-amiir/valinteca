@@ -5,8 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./main.css" />
-    <script src="./main.js"></script>
+    <script src="./js/main.js" defer></script>
     <title>Valinteca</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <div class="cart">
+        <p>Cart Secction</p>
+        <!-- Cart Icon  -->
+        <div class="cart_icon">
+          <span id="cart_icon-quantity">0</span>
+        </div>
+        <!-- Cart DropDown  -->
+        <div id="cart_dropDown"></div>
+      </div>
+    </header>
+    <main>
+      <!-- Prooducts  -->
+      <p>Products Section</p>
+      <div class="products-container"></div>
+      <!-- Modal  -->
+      <p>Modal Section</p>
+      <div id="modal">
+        <div id="modal_content"></div>
+        <span id="modal_overlay" onclick="openCloseModal()">overlay</span>
+      </div>
+    </main>
+    <!-- <script src="./js/two.js" type="module"></script> -->
+  </body>
 </html>
