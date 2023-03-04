@@ -5,8 +5,9 @@
 .home .home_header {
   width: 100%;
   text-align: center;
-  margin-block: 30px;
+  margin-block: 20px;
   font-size: 3rem;
+  padding-inline: 2rem;
 }
 .home .products_container {
   display: flex;
@@ -77,7 +78,7 @@
   z-index: 10;
 }
 .home #modal_content img {
-  max-width: clamp(35rem, 10vw, 50rem);
+  max-width: clamp(35rem, 50vw, 50rem);
 }
 .home #modal_content-name {
   font-size: 3rem;
@@ -103,7 +104,7 @@
   background-image: repeating-linear-gradient(45deg, black, transparent 100px);
   background-color: rgb(0 0 0 / 75%);
   backdrop-filter: blur(4px) invert(1);
-  color: #ff4a6c;
+  color: crimson;
   padding: 4rem;
   text-align: right;
   font-size: 3rem;

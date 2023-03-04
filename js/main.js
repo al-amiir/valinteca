@@ -1,14 +1,21 @@
 import { Product } from "./product.js";
 import { Cart } from "./cart.js";
-import { products } from "./data.js";
+import { data } from "./data.js";
 
-const productsArr = products;
-
+let productsArr;
 // Cart Container
 let cart = new Cart();
-
 // Product Container
 let productsContainer = "";
+
+// Set Prodduct Array To Locale Storage
+if (localStorage.getItem("productArray")) {
+  productsArr = JSON.parse(localStorage.getItem("productArray"));
+} else {
+  productsArr = data;
+  localStorage.setItem("productArray", JSON.stringify(data));
+}
+
 // Create HTML Products
 productsArr.forEach((element) => {
   let product = new Product(
@@ -41,22 +48,22 @@ productsArr.forEach((product, i) => {
     ? (addHtmlElement.style.display = "none")
     : (removeHtmlElement.style.display = "none");
 
-  // Add Click Event For Add To Cart Button
+  // Add To Cart Click Event
   addHtmlElement.addEventListener("click", () => {
     cart.addToCart(product);
-    cart.insertHTMLElements("#cart_modal-content");
+    cart.insertHTMLElements("#cart_modal-content-items");
     addHtmlElement.style.display = "none";
     removeHtmlElement.style.display = "initial";
     document.querySelector("#header_cart-icon-quantity").textContent =
       cart.cartValues.length;
   });
 
-  // Add Click Event For Remove From Cart Button
+  // Remove From Cart Click Event
   removeHtmlElement.addEventListener("click", () => {
     cart.removeFromCart(product);
     addHtmlElement.style.display = "initial";
     removeHtmlElement.style.display = "none";
-    cart.insertHTMLElements("#cart_modal-content");
+    cart.insertHTMLElements("#cart_modal-content-items");
     document.querySelector("#header_cart-icon-quantity").textContent =
       cart.cartValues.length;
   });
@@ -74,21 +81,23 @@ productsArr.forEach((product, i) => {
 });
 //////////////////////////////////////////////////////////////////////////////////////////////////
 // Cart Modal Click Events
-let cartOverlay = document.querySelector("#cart_modal-overlay");
+let cartModal = document.querySelector("#cart_modal");
 let cartIcon = document.querySelector("#header_cart-icon");
-let cartContent = document.querySelector("#cart_modal-content");
-cartOverlay.addEventListener("click", () => {
-  cartOverlay.style.display = "none";
-  cartContent.style.height = "0px";
-});
+let cartOverlay = document.querySelector("#cart_modal-overlay");
+let cartModalCloseBtn = document.querySelector("#cart_modal-content-close");
 cartIcon.addEventListener("click", () => {
   if (cart.cartValues.length > 0) {
-    cartContent.style.height = "fit-content";
-    cartOverlay.style.display = "block";
+    cartModal.style.display = "block";
   }
 });
+cartOverlay.addEventListener("click", () => {
+  cartModal.style.display = "none";
+});
+cartModalCloseBtn.addEventListener("click", () => {
+  cartModal.style.display = "none";
+});
 //////////////////////////////////////////////////////////////////////////////////////////////////
-// Product Modal
+// Product Modal Click Events
 let productModalOverlay = document.querySelector("#modal_overlay");
 let productModal = document.querySelector("#modal");
 

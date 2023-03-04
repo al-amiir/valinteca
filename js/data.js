@@ -1,4 +1,4 @@
-export let products = [
+export let data = [
   {
     id: 1,
     name: "Nike Sneakers",
