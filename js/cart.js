@@ -4,7 +4,7 @@ export class Cart {
   }
   htmlElement(element) {
     return `
-        <div class="product">
+        <div>
             <img class="product_image" src="${element.image}" alt="" />
             <p class="product_name">${element.name}</p>
             <p class="product_price">${element.price}</p>

@@ -10,12 +10,13 @@ export class Product {
     return `
         <div class="product">
             <img class="product_image" src="${this.img}" alt="" />
+            <span class="product_image-circle"></span>
             <p class="product_name">${this.name}</p>
             <p class="product_price">${this.price}</p>
             <div class="product_buttons">
                 <button class="product_buttons-add product_buttons-add-${this.id}">Add</button>
-                <button class="product_buttons-add product_buttons-remove-${this.id}">Remove</button>
-                <button class="product_buttons-openModal product_buttons-openModal-${this.id}">open</button>
+                <button class="product_buttons-remove product_buttons-remove-${this.id}">Remove</button>
+                <button class="product_buttons-openModal product_buttons-openModal-${this.id}">View</button>
             </div>
         </div>
     `;

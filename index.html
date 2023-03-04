@@ -4,31 +4,47 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
     <script src="./js/main.js" type="module"></script>
     <title>Valinteca</title>
   </head>
   <body>
-    <header>
-      <div class="cart">
-        <p>Cart Secction</p>
+    <!-- Header  -->
+    <header class="header">
+      <!-- Logo  -->
+      <p class="header_logo">
+        <img src="https://img.icons8.com/pastel-glyph/40/000000/shop--v4.png" />
+      </p>
+      <div class="header_cart">
         <!-- Cart Icon  -->
-        <div class="cart_icon">
-          <span id="cart_icon-quantity">0</span>
+        <div id="header_cart-icon">
+          <img
+            src="https://img.icons8.com/ios/40/000000/shopping-bag--v1.png"
+          />
+          <span id="header_cart-icon-quantity">0</span>
         </div>
         <!-- Cart DropDown  -->
-        <div id="cart_dropDown"></div>
+        <div id="cart_modal">
+          <div id="cart_modal-content"></div>
+          <div id="cart_modal-overlay">X</div>
+        </div>
       </div>
     </header>
-    <main>
+    <main class="home">
       <!-- Prooducts  -->
-      <p>Products Section</p>
-      <div class="products-container"></div>
+      <p class="home_header">Choose Your Favourite Sneaker!</p>
+      <div class="products_container"></div>
       <!-- Modal  -->
-      <p>Modal Section</p>
+
       <div id="modal">
         <div id="modal_content"></div>
-        <span id="modal_overlay" onclick="openCloseModal()">overlay</span>
+        <span id="modal_overlay">X</span>
       </div>
     </main>
     <!-- <script src="./js/two.js" type="module"></script> -->

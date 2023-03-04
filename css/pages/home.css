@@ -1,0 +1,112 @@
+.home {
+  z-index: 1;
+  padding-block: 40px;
+}
+.home .home_header {
+  width: 100%;
+  text-align: center;
+  margin-block: 30px;
+  font-size: 3rem;
+}
+.home .products_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.home .product {
+  position: relative;
+  text-align: center;
+  width: fit-content;
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid #cecece;
+  border-radius: 6px;
+  font-size: 2.6rem;
+  cursor: pointer;
+}
+.home .product_image {
+  height: 300px;
+  width: 300px;
+  object-fit: contain;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.home .product:hover .product_image {
+  transform: rotateZ(-10deg) scale(1.1);
+}
+.home .product_image-circle {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  background-image: repeating-radial-gradient(#ff6161, orange 15px);
+  background-color: #e6a9ad;
+  z-index: -1;
+  transition: 0.3s;
+  clip-path: circle(0%);
+}
+.home .product:hover .product_image-circle {
+  clip-path: circle(35%);
+}
+.home .product_buttons {
+  margin-block: 5px;
+}
+.home .product_buttons-add {
+  background-color: #007400;
+  color: white;
+}
+.home .product_buttons-remove {
+  background-color: #ff4a6c;
+  color: white;
+}
+.home #modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.home #modal_content {
+  z-index: 10;
+}
+.home #modal_content img {
+  max-width: clamp(35rem, 10vw, 50rem);
+}
+.home #modal_content-name {
+  font-size: 3rem;
+  color: black;
+  background-color: #e09c00;
+  width: fit-content;
+  padding: 4px 30px;
+}
+.home #modal_content-price {
+  font-size: 3rem;
+  color: black;
+  background-color: #00e0d1;
+  width: fit-content;
+  padding: 4px 69px;
+  margin-left: 20px;
+}
+.home #modal_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: repeating-linear-gradient(45deg, black, transparent 100px);
+  background-color: rgb(0 0 0 / 75%);
+  backdrop-filter: blur(4px) invert(1);
+  color: #ff4a6c;
+  padding: 4rem;
+  text-align: right;
+  font-size: 3rem;
+  z-index: 1;
+  cursor: pointer;
+}

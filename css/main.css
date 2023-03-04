@@ -1,0 +1,25 @@
+@import url(./components/header.css);
+@import url(./pages/home.css);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+  font-size: 62.5%;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  background-color: #e0e0e0;
+}
+button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  margin: 5px;
+  padding: 5px 20px;
+  border-radius: 5px;
+  border: 1px solid black;
+  cursor: pointer;
+}
