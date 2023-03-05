@@ -19,14 +19,16 @@ export class Cart {
     document.querySelector(domTarget).innerHTML = container;
   }
   addToCart(element) {
+    element.cartStatus = true;
     this.cartValues.push(element);
   }
   removeFromCart(element) {
     for (let i = 0; i < this.cartValues.length; i++) {
       if (this.cartValues[i].id === element.id) {
+        this.cartValues[i].cartStatus = false;
         this.cartValues.splice(i, 1);
+        break;
       }
-      break;
     }
   }
 }
