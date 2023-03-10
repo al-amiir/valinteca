@@ -2,8 +2,6 @@ import { Product } from "./product.js";
 import { Cart } from "./cart.js";
 import { data } from "./data.js";
 
-console.log("HEY");
-
 let productsArr;
 // Cart Container
 let cart = new Cart();
